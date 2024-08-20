@@ -7,7 +7,7 @@ class Url(db.Model):
     shortCode = db.Column(db.String(12), unique=True, nullable=False)
     created = db.Column(db.DateTime, nullable=False, default=db.func.now())
     updated = db.Column(db.DateTime, nullable=True, default=db.func.now(), onupdate=db.func.now())
-    accessCount = db.Column(db.Integer, defualt=0)
+    accessCount = db.Column(db.Integer, default=0)
 
     def __repr__(self):
         return f'<Short url {self.shortCode} with id {self.id}>'
